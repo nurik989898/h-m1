@@ -23,15 +23,19 @@ public class Main {
 
     public static void sortirovka(){
         double[] hak ={24, 56, 78, 9, -10};
-        for (int i = 0; i < hak.length; i++) {
-            System.out.print(hak[i] + " ");
-        }
-        System.out.print("sortirovka\n");
-        Arrays.sort(hak);
-        for (int i = 0; i < hak.length; i++) {
-            System.out.print(hak[i] + " ");
+        for (int i = 0; i < hak.length ; i++) {
+            double min = hak[i];
+            for (int j = i; j < hak.length; j++) {
+                if (min > hak[j]){
+                    double maks = min;
+                    min = hak[j];
+                    hak[j] = maks;
+                }
 
 
+            }
+            hak[i] = min;
         }
-    }
+        System.out.println(Arrays.toString(hak));
+        }
 }
